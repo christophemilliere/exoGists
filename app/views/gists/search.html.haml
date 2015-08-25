@@ -1,0 +1,4 @@
+- if !@search.blank?
+  = render "gists/renders/list_gist", :gist => @search
+- else
+  %h3 Oupss Rien trouvé ;)

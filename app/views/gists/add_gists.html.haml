@@ -1,0 +1,16 @@
+.container
+  %p
+    Veuillez ajouter votre login github et votre mot de passe.
+  %form.form-signin{action:"#{add_gist_path}",method:"POST"}
+    %input{type:"hidden", name:request_forgery_protection_token.to_s, value: form_authenticity_token }
+    .input-group
+      %span.input-group-addon.glyphicon.glyphicon-user#basic-addon1
+      %input.form-control{placeholder: "name", "aria-describedby"=>"basic-addon1",name:"login"}
+
+    .input-group
+      %span.input-group-addon.glyphicon.glyphicon-flash#basic-addon1
+      %input.form-control{placeholder: "Password", "aria-describedby"=>"basic-addon1",name:"pwd", type:"password"}
+    %button.btn.btn-lg.btn-primary.btn-block{type:"submit"}
+      Ajouter vos gists automatiquement
+
+    %p= flash[:error]

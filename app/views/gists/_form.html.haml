@@ -1,0 +1,25 @@
+= form_for @gist do |f|
+  - if @gist.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@gist.errors.count, "error")} prohibited this gist from being saved:"
+      %ul
+        - @gist.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :user
+    = f.text_field :user
+  .field
+    = f.label :avatar
+    = f.text_field :avatar
+  .field
+    = f.label :gists_id
+    = f.text_field :gists_id
+  .field
+    = f.label :category
+    = f.select :category_id, Category.all.collect{|n| [n.name, n.id]},{selected: @gist.category_id},{class: 'select_form'}
+  .actions
+    = f.submit 'Save'

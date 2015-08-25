@@ -1,0 +1,31 @@
+%h1 Liste des gists
+.panel.panel-default
+  .panel-heading Panel heading
+  %table.table
+    %thead
+      %tr
+        %th #
+        %th Name
+        %th User
+        %th Gists
+        %th Email Company
+        %th Category
+        %th Voir
+        %th Edit
+        %th Supprimer
+    %tbody
+      - gist.each do |gist|
+        %tr
+          %td= image_tag(gist.avatar,:alt => "image", :width => 20, :height => 20)
+          %td= gist.name
+          %td= gist.user
+          %td= gist.gists_id
+          %td= gist.company.email
+          - if !gist.category.nil?
+            %td= gist.category.name
+          - else
+            %td pas de catégorie enregistré
+
+          %td= link_to 'Show', gist
+          %td= link_to 'Edit', edit_gist_path(gist)
+          %td= link_to 'Destroy', gist, :method => :delete, :data => { :confirm => 'Are you sure?' }
