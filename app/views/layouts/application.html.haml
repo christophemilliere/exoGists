@@ -30,7 +30,7 @@
                 Connexion
     .container
       - if company_signed_in?
-        %p Rechercher avec le nom du gist le pseudo ou l'id du gists
+        %p Rechercher avec le nom du gist le pseudo ,l'id du gists ou la catégorie
         .search{style: "margin-bottom:30px; width:500px; margin: auto 0;" }
           %form{ action:"#{search_result_path}", method: "POST"}
             %input{type:"hidden", name:request_forgery_protection_token.to_s, value: form_authenticity_token }

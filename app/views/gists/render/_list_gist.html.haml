@@ -1,31 +1,31 @@
-%h1 Liste des gists
-.panel.panel-default
-  .panel-heading Panel heading
-  %table.table
-    %thead
-      %tr
-        %th #
-        %th Name
-        %th User
-        %th Gists
-        %th Email Company
-        %th Category
-        %th Voir
-        %th Edit
-        %th Supprimer
-    %tbody
-      - gists.each do |g|
-        %tr
-          %td= image_tag(gist.avatar,:alt => "image", :width => 20, :height => 20,)
-          %td= g.name
-          %td= g.user
-          %td= g.gists_id
-          %td= g.company.email
-          - if !g.category.nil?
-            %td= g.category.name
-          - else
-            %td pas de catégorie enregistré
-
-          %td= link_to 'Show', g
-          %td= link_to 'Edit', edit_gist_path(g)
-          %td= link_to 'Destroy', g, :method => :delete, :data => { :confirm => 'Are you sure?' }
+-# %h1 Liste des gists
+-# .panel.panel-default
+-#   .panel-heading Panel heading
+-#   %table.table
+-#     %thead
+-#       %tr
+-#         %th #
+-#         %th Name
+-#         %th User
+-#         %th Gists
+-#         %th Email Company
+-#         %th Category
+-#         %th Voir
+-#         %th Edit
+-#         %th Supprimer
+-#     %tbody
+-#       - gists.each do |g|
+-#         %tr
+-#           %td= image_tag(gist.avatar,:alt => "image", :width => 20, :height => 20,)
+-#           %td= g.name
+-#           %td= g.user
+-#           %td= g.gists_id
+-#           %td= g.company.email
+-#           - if !g.category.nil?
+-#             %td= g.category.name
+-#           - else
+-#             %td pas de catégorie enregistré
+-#
+-#           %td= link_to 'Show', g
+-#           %td= link_to 'Edit', edit_gist_path(g)
+-#           %td= link_to 'Destroy', g, :method => :delete, :data => { :confirm => 'Are you sure?' }
