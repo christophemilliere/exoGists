@@ -18,13 +18,13 @@
                 voir les gists
             %li
               %a{href:"#{categories_path}"}
-                voir les catégories
+                Voir les catégories
             %li
               %a{href:"#{new_category_path}"}
                 Ajouter de nouvelle catégorie
           %li
             - if company_signed_in?
-              =link_to "Deconnection",destroy_company_session_path, method: :delete
+              =link_to "Déconnection",destroy_company_session_path, method: :delete
             - else
               %a{href:"#{new_company_session_path}"}
                 Connexion
