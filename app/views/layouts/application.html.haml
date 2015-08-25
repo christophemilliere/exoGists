@@ -26,17 +26,18 @@
             - if company_signed_in?
               =link_to "Deconnection",destroy_company_session_path, method: :delete
             - else
-              %a{href:""}
+              %a{href:"#{new_company_session_path}"}
                 Connexion
     .container
-      %p Rechercher avec le nom du gist le pseudo ou l'id du gists
-      .search{style: "margin-bottom:30px; width:500px; margin: auto 0;" }
-        %form{ action:"#{search_result_path}", method: "POST"}
-          %input{type:"hidden", name:request_forgery_protection_token.to_s, value: form_authenticity_token }
-          .input{style:"margin-bottom: 20px"}
-            %input.form-control{type:"text", name: "search", placeholder:"Recherche"}
+      - if company_signed_in?
+        %p Rechercher avec le nom du gist le pseudo ou l'id du gists
+        .search{style: "margin-bottom:30px; width:500px; margin: auto 0;" }
+          %form{ action:"#{search_result_path}", method: "POST"}
+            %input{type:"hidden", name:request_forgery_protection_token.to_s, value: form_authenticity_token }
+            .input{style:"margin-bottom: 20px"}
+              %input.form-control{type:"text", name: "search", placeholder:"Recherche"}
 
-          %button.btn.btn-primary.btn-block{type:"submit"}
-            Rechercher
-      %hr
+            %button.btn.btn-primary.btn-block{type:"submit"}
+              Rechercher
+        %hr
       = yield

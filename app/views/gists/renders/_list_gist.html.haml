@@ -14,7 +14,7 @@
         %th Edit
         %th Supprimer
     %tbody
-      - gist.each do |gist|
+      - gist.where(company_id: current_company).each do |gist|
         %tr
           %td= image_tag(gist.avatar,:alt => "image", :width => 20, :height => 20)
           %td= gist.name

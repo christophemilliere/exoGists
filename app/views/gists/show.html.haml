@@ -18,6 +18,9 @@
         = @gist.category.name
       - else
         Pas de catégorie !
+    %p
+      %a.btn.btn-primary.btn-lg{href: "https://gist.github.com/#{@gist.gists_id}", role: "button", target:"_blank"}
+        = @gist.name
 
 = link_to 'Edit', edit_gist_path(@gist)
 \|
