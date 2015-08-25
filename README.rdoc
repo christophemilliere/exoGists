@@ -1,1 +1,18 @@
 == README
+
+=== Fonctionnement
+
+Bundle exec puma
+
+
+=== Futur amélioration de l'application
+
+- Possibilité à l'auteur de pouvoir supprimer ou de modifier ces gists
+- Affichage du gist dans la page show
+- Pouvoir Modifier le gist
+- Création d'une gem.
+
+=== BDD
+bdd.sql
+
+
