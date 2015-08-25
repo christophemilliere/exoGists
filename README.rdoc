@@ -6,6 +6,7 @@ Bundle exec puma
 
 === Compte de test
 Login: brandcelebrities@gmail.com
+
 Pwd: azertyuio
 
 === Futur amélioration de l'application
