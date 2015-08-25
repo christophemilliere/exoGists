@@ -4,11 +4,15 @@
 
 Bundle exec puma
 
+=== Compte de test
+Login: brandcelebrities@gmail.com
+Pwd: azertyuio
 
 === Futur amélioration de l'application
 
 - Possibilité à l'auteur de pouvoir supprimer ou de modifier ces gists
 - Affichage du gist dans la page show
+- Ajouter la recherche par catégorie
 - Pouvoir Modifier le gist
 - Création d'une gem.
 
